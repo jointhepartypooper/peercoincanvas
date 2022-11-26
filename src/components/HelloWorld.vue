@@ -39,7 +39,7 @@ function generate() {
   };
 
   do {
-    let curX = indexx;
+    let curX = xtop.value;
 
     do {
       add(
