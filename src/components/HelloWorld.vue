@@ -39,15 +39,18 @@ function generate() {
   };
 
   do {
+    let curX = indexx;
+
     do {
       add(
-        gen.forPixelColour({ x: indexx, y: indexy }, selectedColor.value),
+        gen.forPixelColour({ x: curX, y: indexy }, selectedColor.value),
         amount.value
       );
 
-      indexx++;
-    } while (indexx <= xbottom.value);
+      curX++;
+    } while (curX <= xbottom.value);
 
+    indexx++;
     indexy++;
   } while (indexy <= ybottom.value);
 
