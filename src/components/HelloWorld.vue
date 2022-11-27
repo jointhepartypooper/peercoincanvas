@@ -60,8 +60,7 @@ function generateFreehand() {
       csvFileData.push([address, amount]);
     }
   };
-
-  for (let i = 0; i < clickX.length; i += 1) {
+  for (let i = clickX.length - 1; i >= 0; i--) {
     let curX = xcanvas.value + clickX[i];
     let curY = ycanvas.value + clickY[i];
     let curColor = color[i];
