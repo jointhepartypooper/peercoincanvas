@@ -54,17 +54,27 @@ function generateFreehand() {
   //validate input
   if (clickX.length === 0) return;
   let csv = "";
+  let points = [] as Array<Array<number>>;
   let csvFileData = [] as Array<Array<string>>;
-  let add = (address: string, amount: string) => {
-    if (!csvFileData.some((a) => a[0] === address)) {
+  let add = (address: string, amount: string, x: number, y: number) => {
+    if (
+      !csvFileData.some((a) => a[0] === address) &&
+      !points.some((a) => a[0] === x && a[1] === y)
+    ) {
       csvFileData.push([address, amount]);
+      points.push([x, y]);
     }
   };
   for (let i = clickX.length - 1; i >= 0; i--) {
     let curX = xcanvas.value + clickX[i];
     let curY = ycanvas.value + clickY[i];
     let curColor = color[i];
-    add(gen.forPixelColour({ x: curX, y: curY }, curColor), amount.value);
+    add(
+      gen.forPixelColour({ x: curX, y: curY }, curColor),
+      amount.value,
+      curX,
+      curY
+    );
   }
 
   csvFileData.forEach((row) => {
