@@ -8,13 +8,8 @@ import HelloWorld from "./components/HelloWorld.vue";
   </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+<style>
+body {
+  background-color: antiquewhite;
 }
 </style>
