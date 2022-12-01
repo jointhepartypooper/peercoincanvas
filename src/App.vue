@@ -7,9 +7,4 @@ import HelloWorld from "./components/HelloWorld.vue";
     <HelloWorld msg="Quick QR Generator" />
   </div>
 </template>
-
-<style>
-body {
-  background-color: antiquewhite;
-}
-</style>
+ 
